@@ -1,0 +1,13 @@
+order_id,date,region,product,quantity,revenue
+O001,2026-01-03,North,Notebook,12,540
+O002,2026-01-05,West,Course Pack,5,625
+O003,2026-01-08,South,Notebook,8,360
+O004,2026-01-12,East,Workshop,3,900
+O005,2026-01-18,North,Course Pack,6,750
+O006,2026-02-02,West,Notebook,15,675
+O007,2026-02-07,South,Workshop,2,600
+O008,2026-02-11,East,Course Pack,4,500
+O009,2026-02-16,North,Workshop,4,1200
+O010,2026-03-01,West,Course Pack,7,875
+O011,2026-03-06,South,Notebook,10,450
+O012,2026-03-10,East,Workshop,5,1500

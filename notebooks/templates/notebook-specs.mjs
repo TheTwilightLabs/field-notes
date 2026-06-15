@@ -1,0 +1,30 @@
+const specs = [
+  ["python-in-data-science", "Python in data science", [], ["hours_per_day = 2\nstudy_days = 5\ntotal_hours = hours_per_day * study_days\nprint(f'Planned study time: {total_hours} hours')"]],
+  ["start-with-google-colab", "Start immediately with Google Colab", [], ["message = 'My first Colab notebook'\nprint(message)", "import pandas as pd\nprint('pandas is ready:', pd.__name__)"]],
+  ["install-miniconda-and-jupyter", "Install Miniconda and JupyterLab", [], ["import sys\nprint('Python executable:', sys.executable)\nprint('Python version:', sys.version.split()[0])"]],
+  ["notebooks-environments-and-debugging", "Notebooks, environments, and debugging", [], ["scores = [72, 84, 91]\nscore = scores[-1]\nprint(score)"]],
+  ["variables-values-and-types", "Variables, values, and data types", [], ["name = 'Asha'\nlessons = 4\nscore = 88.5\ncompleted = True\nprint(type(name), type(lessons), type(score), type(completed))"]],
+  ["collections-for-data", "Lists, dictionaries, tuples, and sets", [], ["scores = [72, 84, 91]\nlearner = {'name': 'Asha', 'score': scores[-1], 'track': 'ML'}\nprint(learner)"]],
+  ["conditions-and-loops", "Conditions and loops", [], ["scores = [42, 76, 91]\nlabels = ['pass' if score >= 60 else 'review' for score in scores]\nprint(labels)"]],
+  ["functions-imports-and-errors", "Functions, imports, and errors", [], ["def clean_label(value):\n    return value.strip().lower()\n\nassert clean_label('  Machine Learning ') == 'machine learning'\nprint('function test passed')"]],
+  ["numpy-arrays-and-shapes", "NumPy arrays and shapes", ["numpy"], ["import numpy as np\nfeatures = np.array([[2, 70], [5, 84], [7, 91]])\nprint(features.shape)\nprint(features[:, 1])"]],
+  ["vectorized-calculations", "Vectorized calculations and statistics", ["numpy"], ["import numpy as np\nscores = np.array([72, 84, 91, 63])\nstandardized = (scores - scores.mean()) / scores.std()\nprint(standardized.round(2))"]],
+  ["load-and-inspect-csv-data", "Load and inspect CSV data", ["pandas"], ["import pandas as pd\nlearners = pd.read_csv(DATASET_PATH)\nprint(learners.shape)\nprint(learners.isna().sum())"], "learners.csv"],
+  ["select-filter-sort-and-group", "Select, filter, sort, and group", ["pandas"], ["import pandas as pd\nsales = pd.read_csv(DATASET_PATH)\nprint(sales.groupby('region')['revenue'].sum().sort_values(ascending=False))"], "sales.csv"],
+  ["clean-missing-and-duplicate-data", "Clean missing and duplicate data", ["pandas"], ["import pandas as pd\nlearners = pd.read_csv(DATASET_PATH)\nclean = learners.drop_duplicates().copy()\nclean['study_hours'] = clean['study_hours'].fillna(clean['study_hours'].median())\nassert clean['study_hours'].notna().all()\nprint(clean.shape)"], "learners.csv"],
+  ["combine-tables-and-create-features", "Combine tables and create features", ["pandas"], ["import pandas as pd\nsales = pd.read_csv(DATASET_PATH)\nsales['unit_price'] = (sales['revenue'] / sales['quantity']).round(2)\nassert sales['unit_price'].notna().all()\nprint(sales[['product', 'unit_price']].head())"], "sales.csv"],
+  ["matplotlib-fundamentals", "Matplotlib fundamentals", ["pandas", "matplotlib"], ["import pandas as pd\nimport matplotlib.pyplot as plt\nsales = pd.read_csv(DATASET_PATH)\nby_region = sales.groupby('region')['revenue'].sum()\nfig, ax = plt.subplots()\nby_region.plot.bar(ax=ax, color='#164bff')\nax.set(title='Revenue by region', xlabel='Region', ylabel='Revenue')\nplt.close(fig)\nprint('chart created')"], "sales.csv"],
+  ["distributions-relationships-and-honest-charts", "Distributions, relationships, and honest charts", ["pandas", "matplotlib"], ["import pandas as pd\nimport matplotlib.pyplot as plt\nlearners = pd.read_csv(DATASET_PATH)\nfig, ax = plt.subplots()\nax.scatter(learners['study_hours'], learners['final_score'], color='#164bff')\nax.set(title='Study time and final score', xlabel='Study hours', ylabel='Final score')\nplt.close(fig)\nprint('chart created')"], "learners.csv"],
+  ["frame-and-train-a-first-model", "Frame and train a first model", ["pandas", "scikit-learn"], ["import pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\niris = pd.read_csv(DATASET_PATH)\nX = iris.drop(columns='species')\ny = iris['species']\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)\nmodel = LogisticRegression(max_iter=300).fit(X_train, y_train)\nprint('test accuracy:', round(model.score(X_test, y_test), 3))"], "iris.csv"],
+  ["evaluate-explain-and-complete-the-project", "Evaluate, explain, and complete the project", ["pandas", "scikit-learn"], ["import pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import confusion_matrix\niris = pd.read_csv(DATASET_PATH)\nX = iris.drop(columns='species')\ny = iris['species']\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)\nmodel = LogisticRegression(max_iter=300).fit(X_train, y_train)\npredictions = model.predict(X_test)\nprint(confusion_matrix(y_test, predictions))"], "iris.csv"],
+];
+
+export default specs.map(([slug, title, packages, solutionCells, dataset]) => ({
+  slug,
+  title,
+  packages,
+  solutionCells,
+  dataset,
+  objective: `Complete the practical workflow for ${title.toLowerCase()}.`,
+  expectedOutcome: `You can explain and reproduce the main result from ${title.toLowerCase()}.`,
+}));

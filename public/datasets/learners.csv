@@ -1,0 +1,13 @@
+learner_id,name,track,study_hours,attendance_pct,practice_tasks,final_score
+L001,Asha,Machine Learning,8,96,12,91
+L002,Dev,Statistics,5,88,9,78
+L003,Mina,Data Engineering,6,92,10,84
+L004,Ravi,machine learning,3,72,5,61
+L005,Sara,Statistics,,85,8,74
+L006,Noor,Machine Learning,9,98,12,95
+L007,Leo,Data Engineering,4,80,7,69
+L008,Isha,Statistics,7,94,11,88
+L009,Omar,Machine Learning,2,68,4,55
+L010,Mei,Data Engineering,6,90,9,82
+L011,Dev,Statistics,5,88,9,78
+L012,Zara,Machine Learning,7,93,11,89
