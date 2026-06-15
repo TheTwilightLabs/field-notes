@@ -219,6 +219,43 @@ h3 { font-weight: 500; }
 .section-number { position: absolute; top: 12px; left: -55px; color: var(--blue); }
 
 .coding-brief, .code-walkthrough, .lesson-resources { margin: 100px 0; }
+.game-chapter { margin: 100px 0; padding: 34px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); box-shadow: 10px 10px 0 var(--blue); }
+.game-chapter .eyebrow { color: #8aa7ff; }
+.game-chapter-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; }
+.game-chapter-heading h2 { max-width: 700px; margin: 0; font-size: clamp(2.6rem, 5vw, 5rem); }
+.game-chapter-heading > strong { color: #8aa7ff; font: 400 1rem var(--mono); }
+.game-progress { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin: 35px 0; }
+.game-progress span { height: 7px; border: 1px solid #666b66; }
+.game-progress span.unlocked { border-color: #8aa7ff; background: #8aa7ff; }
+.game-console { min-height: 330px; display: grid; grid-template-columns: 1.1fr .9fr; border: 1px solid #666b66; }
+.game-world {
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 25%, rgba(138,167,255,.25), transparent 26%),
+    radial-gradient(circle at 20% 75%, rgba(22,75,255,.25), transparent 25%),
+    linear-gradient(rgba(138,167,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138,167,255,.06) 1px, transparent 1px);
+  background-size: auto, auto, 18px 18px, 18px 18px;
+}
+.garden-orb { width: 52px; height: 52px; position: absolute; z-index: 2; border: 1px solid #8aa7ff; border-radius: 50%; box-shadow: 0 0 30px rgba(138,167,255,.5), inset 0 0 18px rgba(138,167,255,.3); }
+.orb-one { top: 48px; left: 20%; }
+.orb-two { top: 175px; left: 62%; }
+.orb-three { top: 245px; left: 28%; }
+.garden-path { height: 1px; position: absolute; z-index: 1; background: #8aa7ff; transform-origin: left; opacity: .55; }
+.path-one { width: 52%; top: 85px; left: 25%; transform: rotate(26deg); }
+.path-two { width: 43%; top: 245px; left: 31%; transform: rotate(-20deg); }
+.garden-player { width: 36px; height: 36px; position: absolute; z-index: 3; top: 145px; left: 45%; display: grid; place-items: center; border-radius: 50%; background: var(--blue); color: white; font: 500 .72rem var(--mono); box-shadow: 0 0 25px var(--blue); }
+.game-status { padding: 28px; border-left: 1px solid #666b66; }
+.game-status > span, .game-unlocks span { color: #8aa7ff; font: 400 .62rem var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.game-status h3 { margin: 50px 0 25px; font-size: 2.4rem; line-height: 1; }
+.game-status dl { margin: 0; border-top: 1px solid #666b66; }
+.game-status dl div { display: grid; grid-template-columns: 90px 1fr; gap: 10px; padding: 9px 0; border-bottom: 1px solid #444944; }
+.game-status dd { margin: 0; color: #8aa7ff; font: 400 .7rem var(--mono); }
+.game-status p { margin: 25px 0 0; color: #c8c9c4; font: 400 .72rem/1.7 var(--mono); }
+.game-unlocks { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 24px; }
+.game-unlocks span { padding: 8px 10px; border: 1px solid #666b66; }
 .coding-brief { padding: 40px; border: 1px solid var(--blue); background: var(--blue-light); }
 .coding-brief h2 { max-width: 760px; font-size: clamp(2.2rem, 4vw, 4rem); }
 .coding-brief-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 40px; }
@@ -312,6 +349,8 @@ h3 { font-weight: 500; }
   .module-cards { grid-template-columns: 1fr 1fr; }
   .catalog-strip, .work-section, .syllabus-module { grid-template-columns: 1fr; }
   .resource-grid { grid-template-columns: 1fr; }
+  .game-console { grid-template-columns: 1fr; }
+  .game-status { border-top: 1px solid #666b66; border-left: 0; }
   .lesson-layout { grid-template-columns: 1fr; }
   .lesson-sidebar { height: auto; position: static; padding: 15px 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .lesson-sidebar nav { display: none; }
@@ -351,6 +390,9 @@ h3 { font-weight: 500; }
   .concept-caption { grid-template-columns: 1fr; gap: 8px; }
   .lesson-body { margin-top: 70px; }
   .coding-brief, .code-walkthrough, .lesson-resources { margin: 70px 0; }
+  .game-chapter { margin: 70px 0; padding: 20px; box-shadow: 6px 6px 0 var(--blue); }
+  .game-chapter-heading { align-items: flex-start; flex-direction: column; }
+  .game-world { min-height: 270px; }
   .coding-brief { padding: 24px; }
   .coding-brief-lists { grid-template-columns: 1fr; }
   .resources-heading { align-items: stretch; flex-direction: column; }

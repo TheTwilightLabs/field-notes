@@ -38,11 +38,11 @@ export function CodingLesson({ content }: { content: CodingLessonContent }) {
       <section className="lesson-resources" aria-labelledby="lesson-resources">
         <div className="resources-heading">
           <div><p className="eyebrow">DOWNLOAD &amp; PRACTICE</p><h2 id="lesson-resources">Take the lesson with you.</h2></div>
-          {colabUrl
+          {content.colabNotebook && (colabUrl
             ? <a className="button primary" href={colabUrl} target="_blank" rel="noreferrer">Open starter in Colab ↗</a>
-            : <span className="button disabled" aria-disabled="true" title="Set NEXT_PUBLIC_GITHUB_REPO_BASE to enable Colab links">Colab link not configured</span>}
+            : <span className="button disabled" aria-disabled="true" title="Set NEXT_PUBLIC_GITHUB_REPO_BASE to enable Colab links">Colab link not configured</span>)}
         </div>
-        {!colabUrl && <p className="resource-note">Downloads work now. Set <code>NEXT_PUBLIC_GITHUB_REPO_BASE</code> to a public GitHub blob URL, such as <code>https://github.com/owner/repo/blob/main</code>, to enable Colab.</p>}
+        {content.colabNotebook && !colabUrl && <p className="resource-note">Downloads work now. Set <code>NEXT_PUBLIC_GITHUB_REPO_BASE</code> to a public GitHub blob URL, such as <code>https://github.com/owner/repo/blob/main</code>, to enable Colab.</p>}
         <div className="resource-grid">
           {content.resources.map((resource) => (
             <article className="resource-card" key={resource.href}>

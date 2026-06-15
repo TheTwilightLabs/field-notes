@@ -1,4 +1,5 @@
 import type { CodeStep, Course, DiagramType, Lesson, LessonResource } from "@/lib/course-data";
+import { signalGardenModule } from "@/lib/python-game-data";
 
 type LessonSpec = {
   slug: string;
@@ -415,7 +416,7 @@ export const pythonFoundationsCourse: Course = {
   kind: "foundation",
   status: "available",
   level: "Absolute beginner",
-  duration: "16–20 hours",
+  duration: "23–28 hours",
   description: "Learn Python and Jupyter by inspecting data, writing small programs, building charts, and training your first model.",
   promise: "By the end, you will be able to work confidently in Colab or JupyterLab, clean and visualize tabular data, and complete a first scikit-learn project.",
   modules: [
@@ -425,5 +426,6 @@ export const pythonFoundationsCourse: Course = {
     { number: "04", title: "Working with pandas", description: "Load, inspect, clean, combine, and summarize tabular data.", lessons: pandasLessons },
     { number: "05", title: "Visualizing data", description: "Build clear charts that reveal variation and relationships.", lessons: visualizationLessons },
     { number: "06", title: "First machine-learning project", description: "Train, evaluate, and explain a complete classification baseline.", lessons: projectLessons },
+    signalGardenModule,
   ],
 };

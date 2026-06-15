@@ -34,6 +34,7 @@ export type Lesson = {
     body: string[];
   };
   coding?: CodingLessonContent;
+  game?: GameChapterContent;
 };
 
 export type CodeStep = {
@@ -47,8 +48,8 @@ export type LessonResource = {
   title: string;
   description: string;
   href: string;
-  kind: "starter" | "solution" | "dataset";
-  format: "IPYNB" | "CSV";
+  kind: "starter" | "solution" | "dataset" | "game";
+  format: "IPYNB" | "CSV" | "PY";
   size: string;
   attribution?: string;
 };
@@ -60,6 +61,19 @@ export type CodingLessonContent = {
   steps: CodeStep[];
   resources: LessonResource[];
   colabNotebook?: string;
+};
+
+export type GameChapterContent = {
+  chapter: number;
+  totalChapters: number;
+  mechanic: string;
+  unlocks: string[];
+  preview: {
+    location: string;
+    energy: number;
+    signals: number;
+    message: string;
+  };
 };
 
 export type Module = {

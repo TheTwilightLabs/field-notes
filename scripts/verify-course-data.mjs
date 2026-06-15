@@ -17,9 +17,12 @@ for (const spec of specs) {
   }
 }
 
-if (specs.length !== 18) errors.push(`expected 18 Python lessons, found ${specs.length}`);
+if (specs.length !== 18) errors.push(`expected 18 notebook-based Python lessons, found ${specs.length}`);
+const gameCurriculum = fs.readFileSync(path.join(root, "lib", "python-game-data.ts"), "utf8");
+const gameLessons = [...gameCurriculum.matchAll(/slug: "game-[^"]+"/g)].length;
+if (gameLessons !== 7) errors.push(`expected 7 Signal Garden lessons, found ${gameLessons}`);
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
-console.log("Verified 18 curriculum lessons and all resource links.");
+console.log("Verified 25 Python curriculum lessons and all notebook resource links.");

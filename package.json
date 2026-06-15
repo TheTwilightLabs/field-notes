@@ -8,9 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "generate:notebooks": "node scripts/generate-notebooks.mjs",
+    "generate:game": "node scripts/generate-game.mjs",
     "verify:notebooks": "python3 scripts/verify-notebooks.py",
     "verify:course-data": "node scripts/verify-course-data.mjs",
-    "test": "npm run generate:notebooks && npm run verify:course-data && npm run verify:notebooks && npx tsc --noEmit"
+    "verify:game": "python3 scripts/verify-game.py",
+    "test": "npm run generate:notebooks && npm run generate:game && npm run verify:course-data && npm run verify:notebooks && npm run verify:game && npx tsc --noEmit"
   },
   "dependencies": {
     "next": "15.5.7",

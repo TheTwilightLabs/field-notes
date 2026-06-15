@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ConceptDiagram } from "@/components/diagrams";
 import { CompleteLessonButton } from "@/components/progress";
 import { CodingLesson } from "@/components/coding-lesson";
+import { GameChapter } from "@/components/game-chapter";
 import { getCourse, getLesson, getLessonNavigation } from "@/lib/course-data";
 
 type Props = { params: Promise<{ courseSlug: string; lessonSlug: string }> };
@@ -34,6 +35,7 @@ export default async function LessonPage({ params }: Props) {
         <header className="lesson-header"><p className="eyebrow">{lesson.eyebrow}</p><h1>{lesson.title}</h1><p>{lesson.summary}</p><div className="lesson-meta"><span>{lesson.duration}</span><span>LESSON {String(navigation.index + 1).padStart(2, "0")} / {navigation.total}</span></div></header>
         <ConceptDiagram type={lesson.diagram} label={`FIG_${String(navigation.index + 1).padStart(3, "0")}`} />
         <p className="concept-caption"><span>CORE CONCEPT</span>{lesson.concept}</p>
+        {lesson.game && <GameChapter content={lesson.game} />}
         {lesson.coding && <CodingLesson content={lesson.coding} />}
         <div className="lesson-body">
           {lesson.sections.map((section, index) => (

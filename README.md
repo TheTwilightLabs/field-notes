@@ -4,7 +4,7 @@ An original Next.js course platform for open, visual, practical data-science edu
 
 The library currently includes:
 
-- **Python for Data Science** — an absolute-beginner foundation with 18 coding lessons, downloadable starter and solution notebooks, and compact datasets.
+- **Python for Data Science** — an absolute-beginner foundation with 25 coding lessons, downloadable notebooks, compact datasets, and the seven-chapter Signal Garden game build-along.
 - **Machine Learning, Visually** — 6 modules and 16 lessons covering ML foundations, supervised learning, evaluation, production systems, and unsupervised learning.
 
 ## Run locally
@@ -22,8 +22,10 @@ Generate and verify all downloadable notebooks:
 
 ```bash
 npm run generate:notebooks
+npm run generate:game
 npm run verify:course-data
 npm run verify:notebooks
+npm run verify:game
 ```
 
 `npm test` runs the complete artifact, notebook-execution, and TypeScript verification workflow.
